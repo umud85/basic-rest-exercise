@@ -4,6 +4,8 @@ export default function binaryIndexOf(stringArray, searchString, sortProp) {
   while (start <= end) {
     let mid = start + Math.floor((end - start) / 2);
 
+    // löst das Problem für Einträge mit alternativen DS100 Werten
+    // solves the cases for ds100 values with more than 1 alternative
     let valArray = stringArray[mid][sortProp].split(",");
     if (valArray.includes(searchString)) {
       return mid;
