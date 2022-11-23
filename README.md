@@ -13,3 +13,5 @@ It takes a semicolon seperated csv file and returns a JSON with the format
 
 
 The (linear) distance is calculated from the geolocation of both stations.
+
+Use "npm install" and "npm start" please.

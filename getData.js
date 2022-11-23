@@ -39,12 +39,12 @@ function getData(departureString, destinationString) {
   // index vom Abfahrtsbahnhof
   // get Index of departure station
   const depIndex = binaryIndexOf(sortedRecords, departureString, searchProp);
-  if (depIndex === -1) return "Station(en) nicht gefunden";
+  if (depIndex === -1) return null;
 
   // index vom Zielbahnhof
   //getIndex of destination station
   const destIndex = binaryIndexOf(sortedRecords, destinationString, searchProp);
-  if (destIndex === -1) return "Statione(en) nicht gefunden";
+  if (destIndex === -1) return null;
 
   const fromLongitude = sortedRecords[depIndex]["Laenge"].replace(",", ".");
   const fromLatitude = sortedRecords[depIndex]["Breite"].replace(",", ".");

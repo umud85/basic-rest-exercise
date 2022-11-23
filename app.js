@@ -6,12 +6,16 @@ import getData from './getData.js';
 const app = express();
 
 app.get("/", (req, res) => {
-  res.end("Homepage");
+  res.send("Homepage");
 });
 
 app.get("/api/v1/distance/:from/:to", (req, res) => {
   const result = getData(req.params.from, req.params.to)
-  res.json(result);
+  if (result) {
+    res.json(result);
+  } else {
+    res.send("Station(en) nicht gefunden.")
+  }
 });
 
 app.use((req, res) => {
